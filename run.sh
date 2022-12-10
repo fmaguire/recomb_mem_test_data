@@ -39,3 +39,11 @@ fasttree -nt phylo/open_sc2_10k.afa > phylo/open_sc2_10k.tree
 # - concatenate fasta following this leaf order (accession includes the leaf order)
 mkdir -p ordered_fasta 
 python scripts/extract_leaf_order_and_concatenate_sequences.py 
+
+# get recombinants as assigned by nextstrain clade 
+zcat head -n1 raw_data/metadata.tsv.gz > query_fasta/headers.txt
+zgrep "recombinant" raw_data/metadata.tsv.gz > query_fasta/recombinants.tsv
+cat query_fasta/headers.txt query_fasta/recombinants.tsv > query_fasta/recombinant_metadata.tsv
+rm query_fasta/headers.txt query_fasta/recombinants.tsv
+xzcat raw_data/sequences.fasta.xz | seqtk subseq - query_fasta/recombinant_sample_accessions.txt > query_fasta/recombinant_query_seqs.fasta
+rm query_fasta/recombinant_sample_accessions.txt 
