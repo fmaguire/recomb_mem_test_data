@@ -1,6 +1,6 @@
-# Test Data Concatenated Compression MEM Finding
+# MEM/Recomb Test Data 
 
-Test data for Travis' idea about using compression of a phylogeny leaf ordered concatenation to find MEMs indicative of recombination.
+Test data for Travis' idea for using MEMs to try and identify recombination.
 All data was generated using `run.sh` (see `env.yaml` for specific dependencies used) with the open global SARS-CoV-2 dataset (~1/2 of all data but saves dealing with GISAID) as processed by Nexstrain.
 
 Briefly:
