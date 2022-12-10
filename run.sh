@@ -41,7 +41,7 @@ mkdir -p ordered_fasta
 python scripts/extract_leaf_order_and_concatenate_sequences.py 
 
 # get recombinants as assigned by nextstrain clade 
-zcat head -n1 raw_data/metadata.tsv.gz > query_fasta/headers.txt
+zcat raw_data/metadata.tsv.gz | head -n 1 > query_fasta/headers.txt
 zgrep "recombinant" raw_data/metadata.tsv.gz > query_fasta/recombinants.tsv
 cat query_fasta/headers.txt query_fasta/recombinants.tsv > query_fasta/recombinant_metadata.tsv
 rm query_fasta/headers.txt query_fasta/recombinants.tsv
