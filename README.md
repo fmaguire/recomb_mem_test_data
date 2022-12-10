@@ -8,3 +8,5 @@ Briefly:
 - Leaf order was extracted using a post-order traversal (top to bottom or I guess right to left in classic CS root at the top tree orientations).
 - This was used to reorder the 10k fasta to match and also generate a concatenated genomic sequence (both can be found in `ordered_fasta/`)
 - Finally, I manually compressed everything to squeeze it onto github!
+
+I also grabbed 91 sample queries from the nexstrain dataset (1 of each lineage assignment amongst all putatively recombinant samples in open dataset) to test the approach (`query_fasta/recombinant_query_seqs.fasta`).
